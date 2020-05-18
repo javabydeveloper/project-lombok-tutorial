@@ -1,4 +1,4 @@
-# [Lombok tutorial](https://javabydeveloper.com/project-lombok-tutorial/)
+# [Lombok Tutorial](https://javabydeveloper.com/project-lombok-tutorial/)
 [![N|Solid](https://javabydeveloper.com/wp-content/uploads/2020/05/project-lombok-tutorial-java.png)](https://javabydeveloper.com/project-lombok-tutorial/)
 Project Lombok Tutorial, a collection of sample applications to investigate Lombok features. Tutorials on [javabydeveloper.com](https://javabydeveloper.com)
 

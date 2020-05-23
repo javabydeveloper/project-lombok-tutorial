@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.javabydeveloper</groupId>
+	<artifactId>delombok-tutorial</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>delombok-maven-example</name>
+	<url>https://javabydeveloper.com</url>
+
+	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<lombokSource>${project.basedir}/src/main/java/com/javabydeveloper/lombok</lombokSource>
+	</properties>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.10</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+
+	</dependencies>
+	<profiles>
+		<profile>
+			<id>dlombok</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.projectlombok</groupId>
+						<artifactId>lombok-maven-plugin</artifactId>
+						<version>1.18.12.0</version>
+						<executions>
+							<execution>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>delombok</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<sourceDirectory>${lombokSource}</sourceDirectory>
+							<verbose>true</verbose>
+							<formatPreferences>
+								<generateDelombokComment>skip</generateDelombokComment>
+								<javaLangAsFQN>skip</javaLangAsFQN>
+								<suppressWarnings>skip</suppressWarnings>
+							</formatPreferences>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
